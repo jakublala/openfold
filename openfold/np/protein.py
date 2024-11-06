@@ -338,9 +338,8 @@ def to_pdb(prot: Protein) -> str:
     atom_positions = prot.atom_positions
     residue_index = prot.residue_index.astype(np.int32)
     b_factors = prot.b_factors
-    if prot.chain_index is not None:
-        chain_index = prot.chain_index.astype(np.int32)
-    
+    chain_index = prot.chain_index.astype(np.int32)
+
     if np.any(aatype > residue_constants.restype_num):
         raise ValueError("Invalid aatypes.")
 
